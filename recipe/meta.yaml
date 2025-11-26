@@ -23,8 +23,8 @@ requirements:
     - pillow
     - av
     - packaging
-    - pytorch
-    - torchvision
+    #- pytorch
+    #- torchvision
   run:
     - python
     - requests
@@ -32,8 +32,13 @@ requirements:
     - av
     - packaging
     # Undeclared upstream dependencies
-    - pytorch
-    - torchvision
+    #- pytorch
+    #- torchvision
+
+# If you want to keep torch/torchvision *optional*, uncomment:
+  run_constrained:
+    - pytorch >=2.3
+    - torchvision >=0.18
 
 test:
   imports:
