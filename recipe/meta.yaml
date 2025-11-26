@@ -46,6 +46,7 @@ test:
 about:
   home: https://github.com/QwenLM/Qwen2.5-VL/
   summary: Qwen Vision Language Model Utils - PyTorch
+  description: Qwen Vision Language Model Utils - PyTorch
   license: Apache-2.0
   license_file: LICENSE
   dev_url: https://github.com/QwenLM/Qwen2.5-VL/
