@@ -17,8 +17,14 @@ build:
 requirements:
   host:
     - python
-    - hatchling
     - pip
+    - hatchling
+    - requests
+    - pillow
+    - av
+    - packaging
+    - pytorch
+    - torchvision
   run:
     - python
     - requests
