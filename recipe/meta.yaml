@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python ==3.12
+    - python 
     - pip
     - hatchling
     - requests
@@ -26,7 +26,7 @@ requirements:
     #- pytorch
     #- torchvision
   run:
-    - python ==3.12
+    - python 
     - requests
     - pillow
     - av
@@ -36,9 +36,9 @@ requirements:
     #- torchvision
 
 # If you want to keep torch/torchvision *optional*, uncomment:
-  run_constrained:
-    - pytorch >=2.3
-    - torchvision >=0.18
+#  run_constrained:
+#    - pytorch >=2.3
+#    - torchvision >=0.18
 
 test:
   imports:
