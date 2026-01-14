@@ -1,0 +1,71 @@
+{% set name = "qwen-vl-utils" %}
+{% set version = "0.0.11" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qwen_vl_utils-{{ version }}.tar.gz
+  sha256: 083ba1e5cfa5002165b1e3bddd4d6d26d1d6d34473884033ef12ae3fe8496cd5
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python 
+    - pip
+    - hatchling
+    - requests
+    - pillow
+    - av
+    - packaging
+    #- pytorch
+    #- torchvision
+  run:
+    - python 
+    - requests
+    - pillow
+    - av
+    - packaging
+    # Undeclared upstream dependencies
+    #- pytorch
+    #- torchvision
+
+# If you want to keep torch/torchvision *optional*, uncomment:
+#  run_constrained:
+#    - pytorch >=2.3
+#    - torchvision >=0.18
+
+test:
+  imports:
+    - qwen_vl_utils
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/QwenLM/Qwen2.5-VL/
+  summary: Qwen Vision Language Model Utils - PyTorch
+  description: Qwen Vision Language Model Utils - PyTorch
+  license: Apache-2.0
+  license_file: LICENSE
+  dev_url: https://github.com/QwenLM/Qwen2.5-VL/
+  doc_url: https://github.com/QwenLM/Qwen3-VL/blob/main/README.md
+
+extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
+    - avoid_noarch
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/95280
+    reason: Client request
+  recipe-maintainers:
+    - ianaobi
+  recipe-maintainers:
+    - zbowling
+
